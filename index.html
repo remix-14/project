@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toytopia</title>
+
+<!--  เพิ่ม Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🔹 Navbar -->
+<header>
+  <div class="left-section">
+    <a href="index.html" class="logo">Toytopia</a>
+
+    <div class="search-box">
+      <input type="text" placeholder="ค้นหาสินค้า...">
+    </div>
+  </div>
+
+ <nav id="navMenu">
+  <a href="index.html">Home</a>
+  <a href="product.html">Product</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+
+  <div class="icons">
+    <a href="Login.html"><i class="fa-solid fa-user"></i></a>
+    <i class="fa-solid fa-bars" id="menu-btn"></i>
+  </div>
+</header>
+
+<!-- 🔹 สไลด์ประกาศ -->
+<div class="announcement-slider">
+  <div class="slide active">
+    <div class="slide-content">
+      <h3>🎉 โปรโมชั่นพิเศษต้อนรับเดือนใหม่!</h3>
+      <p>ช้อปครบ 500 บาท รับฟรีของเล่นลับสุดพิเศษ 1 ชิ้น 🧸</p>
+     <button class="announce-btn">สั่งเลย</button>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="slide-content">
+      <h3>🚚 ส่งฟรีทั่วประเทศ!</h3>
+      <p>เมื่อช้อปครบ 699 บาทขึ้นไป วันนี้ - 30 พ.ย.นี้เท่านั้น</p>
+      <button class="announce-btn">สั่งเลย</button>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="slide-content">
+      <h3>💥 ลดราคาสุดสัปดาห์!</h3>
+      <p>ของเล่นลดสูงสุดถึง 50% ทุกหมวดหมู่ 🎁</p>
+      <button class="announce-btn">ช้อปเลย</button>
+    </div>
+  </div>
+
+  <div class="dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</div>
+
+<!-- 🔹 ส่วนสินค้า -->
+<div class="container">
+
+  <h2 class="section-title">สินค้าแนะนำ</h2>
+
+  <div class="products-grid">
+
+    <!--  1: หมีน้อย -->
+    <div class="product-card">
+      <img src="bear.jpg" class="product-img" alt="ของเล่นหมีน้อย">
+      <p class="product-name">ของเล่นหมีน้อย</p>
+      <p class="product-price">฿199</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <!--  2 -->
+    <div class="product-card">
+      <img src="00.jpg" class="product-img" alt="รถบังคับ">
+      <p class="product-name">รถบังคับเร็วจี๋</p>
+      <p class="product-price">฿299</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <!--  3 -->
+    <div class="product-card">
+      <img src="55.jpg" class="product-img" alt="ตัวต่อจิ๋ว">
+      <p class="product-name">ตัวต่อจิ๋ว</p>
+      <p class="product-price">฿149</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <!--  4 -->
+    <div class="product-card">
+      <img src="04.jpg" class="product-img" alt="ตุ๊กตาแมวน้อย">
+      <p class="product-name">ตุ๊กตาแมวน้อย</p>
+      <p class="product-price">฿259</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <!--  5 -->
+    <div class="product-card">
+      <img src="0001.jpg" class="product-img" alt="กระเป๋า">
+      <p class="product-name">กระเป๋า</p>
+      <p class="product-price">฿300</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <!--  6 -->
+    <div class="product-card">
+      <img src="11.jpg" class="product-img" alt="หมอน">
+      <p class="product-name">หมอน</p>
+      <p class="product-price">฿299</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <!--  7 -->
+    <div class="product-card">
+      <img src="01.jpg" class="product-img" alt="พัดลม">
+      <p class="product-name">พัดลม</p>
+      <p class="product-price">฿350</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+    <!--  8 -->
+    <div class="product-card">
+      <img src="05.jpg" class="product-img" alt="ถังขยะ">
+      <p class="product-name">ถังขยะ</p>
+      <p class="product-price">฿150</p>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+
+
+
+<!-- 🔹 Script -->
+<script>
+  // 🔸 เมนูเปิด/ปิด สำหรับมือถือ
+  const menuBtn = document.getElementById("menu-btn");
+  const navMenu = document.getElementById("navMenu");
+  menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+
+  // 🔹 สไลด์เปลี่ยนอัตโนมัติ
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".announcement-slider .slide");
+  const dots = document.querySelectorAll(".announcement-slider .dot");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      dots[i].classList.remove("active");
+      if (i === index) {
+        slide.classList.add("active");
+        dots[i].classList.add("active");
+      }
+    });
+  }
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, 4000);
+</script>
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>สินค้า | Toytopia</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+</body>
+</html> 

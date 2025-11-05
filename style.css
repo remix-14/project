@@ -1,0 +1,513 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #eef2f5;
+}
+
+/* Navbar */
+header {
+  width: 100%;
+  background: #ffffff;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid #c7e1f2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.search-box input {
+  width: 260px;
+  height: 32px;
+  border: none;
+  background: #f7f7f7;
+  padding: 5px 15px;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  font-size: 18px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #0077cc;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icons i {
+  font-size: 22px;
+  color: #111;
+  cursor: pointer;
+  border: 2px solid #111;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.icons i:hover {
+  color: white;
+  background: #0077cc;
+  border-color: #0077cc;
+}
+
+/* --------------------------- */
+/* 🔹 สไลด์ประกาศ */
+/* --------------------------- */
+.announcement-slider {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: opacity 0.8s ease;
+  color: #003a63;
+}
+
+.slide.active {
+  display: flex;
+  animation: fadeIn 1s ease;
+}
+
+.slide:nth-child(1) { background: linear-gradient(120deg,#c7e7ff,#e4f6ff); }
+.slide:nth-child(2) { background: linear-gradient(120deg,#fff1c5,#fff7d1); }
+.slide:nth-child(3) { background: linear-gradient(120deg,#ffd6e7,#ffe5f1); }
+
+.slide-content h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.slide-content p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.announce-btn {
+  background: #0077cc;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.announce-btn:hover {
+  background: #005fa3;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* จุดบอกตำแหน่งสไลด์ */
+.dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: #0077cc;
+}
+
+/* --------------------------- */
+/* 🔹 ส่วนสินค้า */
+/* --------------------------- */
+.section-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.products-grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  padding: 20px 0 50px;
+}
+
+
+.product-card {
+  width: 220px;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.product-price {
+  font-size: 15px;
+  margin: 6px 0;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+.btn {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: #0077cc;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #005fa3;
+}
+
+/* 🔧 แก้ให้ Navbar ใช้งานได้ */
+header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 9999; /* ทำให้ header อยู่บนสุด */
+}
+
+/* ให้กล่องไอคอนไม่โดนบัง */
+.icons {
+  position: relative;
+  z-index: 10000;
+  cursor: pointer;
+}
+
+/* ให้สไลด์อยู่ชั้นล่างกว่าหัวเว็บ */
+.announcement-slider {
+  position: relative;
+  z-index: 1;
+}
+
+/* ให้ container ทั้งหมดอยู่ใต้ header */
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.icons i {
+  font-size: 22px;
+  color: #111;
+  cursor: pointer;
+  border: 2px solid #111;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white; /* ✅ เปลี่ยนพื้นหลังเป็นสีขาว */
+  transition: all 0.3s;
+}
+
+.icons i:hover {
+  color: white;
+  background: #0077cc;
+  border-color: #0077cc;
+}
+
+/* ✅ Responsive Menu for Mobile */
+#menu-btn {
+  display: none; /* ซ่อนบนจอใหญ่ */
+}
+
+/* เมื่อหน้าจอเล็ก (มือถือ) */
+@media (max-width: 900px) {
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: white;
+    flex-direction: column;
+    width: 180px;
+    padding: 15px;
+    border-radius: 12px;
+    gap: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    z-index: 9999;
+  }
+
+  nav.active {
+    display: flex; /* ✅ กดแล้วแสดงเมนู */
+  }
+
+  #menu-btn {
+    display: flex; /* ✅ โชว์ปุ่มเฉพาะตอนจอเล็ก */
+  }
+
+  .left-section .search-box input {
+    width: 180px;
+  }
+}
+
+.logo {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.logo:hover {
+  opacity: 0.7;
+}
+
+/* ✅ จัด Nav + Icons ไปอยู่ชิดขวาสวย ๆ */
+header {
+  justify-content: space-between;
+}
+
+.left-section {
+  flex: 1;
+}
+
+nav {
+  margin-right: 20px;
+}
+
+.icons {
+  margin-left: 10px;
+}
+
+
+/* TEAM PAGE */
+.team-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.team-grid {
+    width: 92%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.team-card {
+    width: 250px;
+    height: 350px;
+    background: #ffd3bc;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 18px;
+    margin-bottom: 30px;
+}
+
+.team-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.team-name {
+    font-size: 26px;
+    font-weight: 800;
+    margin-top: -5px;
+}
+
+.team-phone {
+    font-size: 20px;
+    margin: 5px 0;
+}
+
+.git-btn {
+    margin-top: 12px;
+    background: #bae3ff;
+    padding: 10px 22px;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+.git-btn:hover {
+    background: #8fd2ff;
+}
+
+/* --------------------------- */
+/* 🔹 FOOTER (ส่วนท้ายเว็บ) */
+/* --------------------------- */
+
+/* ปรับให้ Footer อยู่ด้านล่างเสมอ */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+/* ทำให้เนื้อหาส่วนอื่น ๆ ขยายตัวเพื่อผลัก Footer ลงไปด้านล่างสุด */
+.team-section, .products-grid, .announcement-slider, h2.section-title, body > p {
+    flex-grow: 1; 
+}
+
+.main-footer {
+    width: 100%;
+    /* ปรับ Gradient ให้คล้ายในภาพ (ชมพูอ่อน -> ฟ้าอ่อน) */
+    background: linear-gradient(to right, #ffdee9, #e0f7fa); 
+    padding: 15px 0;
+    text-align: center;
+    color: #333; 
+    font-size: 14px;
+    margin-top: 50px; /* เพิ่มระยะห่างจากเนื้อหาด้านบน */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+    max-width: 1200px; /* จำกัดความกว้างกลางหน้าจอ (ถ้าจำเป็น) */
+    margin: 0 auto;
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 20px;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+/* --------------------------- */
+/* 🔹 FOOTER (ส่วนท้ายเว็บ) */
+/* --------------------------- */
+
+/* 1. ทำให้ Body เป็น Flex Container เพื่อผลัก Footer ลงล่าง */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ความสูงอย่างน้อยเต็มหน้าจอ */
+}
+
+/* 2. ทำให้เนื้อหาส่วนอื่นขยายตัวเพื่อผลัก Footer ลงไป */
+.announcement-slider, .container, .team-section, h2.section-title {
+    flex-grow: 1; 
+}
+
+.main-footer {
+    width: 100%;
+    /* ปรับ Gradient ให้คล้ายในภาพ (ชมพูอ่อน -> ฟ้าอ่อน) */
+    background: linear-gradient(to right, #ffdee9, #e0f7fa); 
+    padding: 12px 0; /* ลด padding ลงเล็กน้อย */
+    text-align: center;
+    color: #333; 
+    font-size: 14px;
+    margin-top: 50px; /* เพิ่มระยะห่างจากเนื้อหาด้านบน */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* เพิ่มระยะห่างระหว่างข้อความกับไอคอน */
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 18px; /* ขนาดไอคอน */
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+

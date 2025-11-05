@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toytopia - ทีมงาน</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+<!-- 🔹 Navbar -->
+<header>
+  <div class="left-section">
+    <a href="index.html" class="logo">Toytopia</a>
+
+    <div class="search-box">
+      <input type="text" placeholder="ค้นหาสินค้า...">
+    </div>
+  </div>
+
+ <nav id="navMenu">
+  <a href="index.html">Home</a>
+  <a href="product.html">Product</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+
+  <div class="icons">
+    <a href="Login.html"><i class="fa-solid fa-user"></i></a>
+    <i class="fa-solid fa-bars" id="menu-btn"></i>
+  </div>
+</header>
+
+<div class="container">
+
+  <h2 class="section-title">สมาชิก</h2>
+
+  <div class="products-grid">
+
+<section class="team-section">
+  <div class="team-grid">
+
+ 
+
+    <div class="team-card">
+      <img src="6752100403.jpg" class="team-img">
+      <h3 class="team-name">ธิติยะ เพ็รชคุ้ม</h3>
+      <p class="team-phone">6752100403</p>
+      <button class="git-btn"><a href="https://github.com/">Github</a></button>
+    </div>
+
+    <div class="team-card">
+      <img src="6752100497.jpg" class="team-img">
+      <h3 class="team-name">วรัญชัย ชนะดิษฐ์</h3>
+      <p class="team-phone">6752100497</p>
+   <button class="git-btn"><a href="https://github.com/Obiruni?fbclid=IwY2xjawN4JlpleHRuA2FlbQIxMABicmlkETE0VHpSMFFqYlFyODdJdmd6c3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHhJ0Vnih556hB-OTwS3oLr5ytVIpYAMiV5UwygKHxUxIvlJgfb-058pyRkh1_aem_eVV98r2X0Y797pQIAS2JHw">Github</a></button>
+    </div>
+
+    <div class="team-card">
+      <img src="6752100420.png" class="team-img">
+      <h3 class="team-name">ภานุพงษ์ อินทรเสียหร่าย</h3>
+      <p class="team-phone">6752100420</p>
+      <button class="git-btn"><a href="https://github.com/PNP112">Github</a></button>
+    </div>
+
+    <div class="team-card">
+      <img src="1234.jpg" class="team-img">
+      <h3 class="team-name">ภควัทน์ ตีระแพทย์ </h3>
+      <p class="team-phone">6752100543</p>
+     <button class="git-btn"><a href="https://github.com/kay562?fbclid=IwY2xjawN4NdJleHRuA2FlbQIxMABicmlkETFjSmRHdXFFa0dFQUpsSkpDc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHiz5fTW7OcGmMygWheqxK5UnICLLBOkjkbXJGBLShZ8DmBgNlrWjBx6RBRqM_aem_eJbAgBlrn9D-VjEoQyZ5-A">Github</a></button>
+    </div>
+
+    <div class="team-card">
+      <img src="546.jpg" class="team-img">
+      <h3 class="team-name">พัทธดนย์ มีเหม็ง</h3>
+      <p class="team-phone">6752100411</p>
+     <button class="git-btn"><a href="https://github.com/sixxke-lgtm?tab=repositories">Github</a></button>
+    </div>
+
+</section>
+
+<!-- 🔹 Script -->
+<script>
+  // 🔸 เมนูเปิด/ปิด สำหรับมือถือ
+  const menuBtn = document.getElementById("menu-btn");
+  const navMenu = document.getElementById("navMenu");
+  menuBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+
+  // 🔹 สไลด์เปลี่ยนอัตโนมัติ
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".announcement-slider .slide");
+  const dots = document.querySelectorAll(".announcement-slider .dot");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      dots[i].classList.remove("active");
+      if (i === index) {
+        slide.classList.add("active");
+        dots[i].classList.add("active");
+      }
+    });
+  }
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, 4000);
+</script>
+
+</body>
+</html>
